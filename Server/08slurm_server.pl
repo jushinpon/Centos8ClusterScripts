@@ -92,6 +92,8 @@ system("dnf install -y chrony");#time sync
 system("systemctl start chronyd");#time sync
 system("systemctl enable chronyd");#time sync
 system("timedatectl set-timezone Asia/Taipei");## setting timezone
+#=big
+
 
 # stop old slurm, if installed
 system("systemctl stop slurmctld.service");
@@ -193,6 +195,7 @@ tie my %coreNo, 'MCE::Shared';
 tie my %socketNo, 'MCE::Shared';
 tie my %threadcoreNo, 'MCE::Shared';
 tie my %coresocketNo, 'MCE::Shared';
+tie my %numaNo, 'MCE::Shared';
 
 for (@avaIP){	
 	$pm->start and next;
@@ -236,7 +239,16 @@ for (@avaIP){
 	  $coresocketNo{$_} = $Mread;
 	  print "coresocketNo hash array $_ , Mread: $Mread, $coresocketNo{$_}\n";
 	  };
-
+# get the NUMA Number (slurm uses it as socket number)	
+	$exp->send ("lscpu|grep \"^NUMA node(s):\" | sed 's/^NUMA node(s): *//g' \n") if ($exp->expect($expectT,'#'));
+	$exp->expect($expectT,'-re','\d+');#before() keeps command, match() keeps number, after() keep left part+root@master#
+	$Mread = $exp->match();
+	chomp $Mread;
+    if ($Mread){
+	  $numaNo{$_} = $Mread;
+	  print "numaNo hash array $_ , Mread: $Mread, $numaNo{$_}\n";
+	  };
+	  
 	$exp -> send("exit\n") if ($exp->expect($expectT,'#'));
 	$exp->soft_close();
 	$pm->finish;
@@ -244,13 +256,13 @@ for (@avaIP){
 $pm->wait_all_children;
 unlink "./IP_coreNo.txt";
 open my $ss3,">./IP_coreNo.txt";
-print $ss3 "IP  CoreNo SocketNo ThreadPerCore CorePerSocket\n";
+print $ss3 "IP  CoreNo SocketNo ThreadPerCore CorePerSocket NUMAnodeNo\n";
 for (sort keys %coreNo){
-	print $ss3 "$_  $coreNo{$_} $socketNo{$_} $threadcoreNo{$_} $coresocketNo{$_}\n";
-	print  "$_  $coreNo{$_} $socketNo{$_} $threadcoreNo{$_} $coresocketNo{$_}\n";
+	print $ss3 "$_  $coreNo{$_} $socketNo{$_} $threadcoreNo{$_} $coresocketNo{$_} $numaNo{$_}\n";
+	print  "$_  $coreNo{$_} $socketNo{$_} $threadcoreNo{$_} $coresocketNo{$_} $numaNo{$_}\n";
 }
 close($ss3);
-die;
+#die;
 ## check slurm installation status of each node
 my $nodeNo = @avaIP;
 my $whileCounter = 0;

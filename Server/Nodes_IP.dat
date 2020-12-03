@@ -1,5 +1,5 @@
-192.168.0.2
-192.168.0.3
+192.168.1.3
+#192.168.0.3
 # ping not works for : 192.168.0.4
 # ping not works for : 192.168.0.5
 # ping not works for : 192.168.0.6

@@ -46,7 +46,7 @@ my %coreNo;
 my %socketNo;
 my %threadcoreNo;
 my %coresocketNo;
-
+my %numaNo;
 for (1..$#input){#the first line shows the headers,skip it.
 	$input[$_] =~s/^\s+//g;#replace operation 
 	my @temp = split(/\s+/,$input[$_]);
@@ -55,14 +55,17 @@ for (1..$#input){#the first line shows the headers,skip it.
 	chomp $temp[2];
 	chomp $temp[3];
 	chomp $temp[4];
+	chomp $temp[5];
 	$coreNo{$temp[0]}=$temp[1];
 	$socketNo{$temp[0]}=$temp[2];
 	$threadcoreNo{$temp[0]}=$temp[3];
 	$coresocketNo{$temp[0]}=$temp[4];
+	$numaNo{$temp[0]}=$temp[5];
 	print " IP and CoreNo: $temp[0]  $coreNo{$temp[0]} \n";
 	print " IP and SocketNo: $temp[0]  $socketNo{$temp[0]} \n";
 	print " IP and Thread perl Core: $temp[0]  $threadcoreNo{$temp[0]} \n";
 	print " IP and Core perl Socket: $temp[0]  $coresocketNo{$temp[0]} \n";
+	print " IP and NUMA node number: $temp[0]  $numaNo{$temp[0]} \n";
 }
 
 $ENV{TERM} = "vt100";
@@ -75,17 +78,19 @@ system("cp slurmConf_template.txt slurm.conf");# cp from template file
 
 for (@avaIP){
 #	print "Keys: $_\n";
-    $_ =~/192.168.0.(\d{1,3})/;
+    $_ =~/192.168.\d.(\d{1,3})/;
 	my $nodeID = $1 - 1;# node ID according to th fourth number of current IP
 	chomp($nodeID);
     my $formatted_nodeID = sprintf("%02d",$nodeID);
     my $Nodename="node"."$formatted_nodeID";
-   `echo "NodeName=$Nodename NodeAddr=$_ CPUs=$coreNo{$_} Sockets=$socketNo{$_} ThreadsPerCore=$threadcoreNo{$_} CoresPerSocket=$coresocketNo{$_}  State=UNKNOWN" >> ./slurm.conf`;#append the data into the file
+    my $socketNo = $numaNo{$_};
+    my $coresocketNo = $coresocketNo{$_}/$numaNo{$_};
+   `echo "NodeName=$Nodename NodeAddr=$_ CPUs=$coreNo{$_} Sockets=$socketNo ThreadsPerCore=$threadcoreNo{$_} CoresPerSocket=$coresocketNo  State=UNKNOWN" >> ./slurm.conf`;#append the data into the file
 #Sockets=1 CoresPerSocket=12 ThreadsPerCore=2
 }
 
 for (@partition){`echo "$_" >> ./slurm.conf`;}
-
+die;
 unlink "/etc/slurm/slurm.conf";
 `cp ./slurm.conf /usr/local/etc/`;
 
