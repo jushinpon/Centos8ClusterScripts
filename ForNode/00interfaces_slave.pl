@@ -75,6 +75,9 @@ system("ifup $Nic_inner"); ## use new setting
 
 system('systemctl restart NetworkManager');
 #system("killall -9 yum");
+system("dnf install -y chrony");#time sync
+system("systemctl start chronyd");#time sync
+system("systemctl enable chronyd");#time sync
 
 system("timedatectl set-timezone Asia/Taipei");## setting timezone
 

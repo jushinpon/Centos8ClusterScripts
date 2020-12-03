@@ -87,6 +87,12 @@ my $pm = Parallel::ForkManager->new("$forkNo");
 ##die "Check pmix installation status\n";
 ###!!!!!!!!!! end of PMIx installation
 #=b
+
+system("dnf install -y chrony");#time sync
+system("systemctl start chronyd");#time sync
+system("systemctl enable chronyd");#time sync
+system("timedatectl set-timezone Asia/Taipei");## setting timezone
+
 # stop old slurm, if installed
 system("systemctl stop slurmctld.service");
 system("systemctl stop slurmd.service");

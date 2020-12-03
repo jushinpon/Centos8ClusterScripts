@@ -9,6 +9,7 @@ use Expect;
 use Parallel::ForkManager;
 use MCE::Shared;
 
+`systemctl stop slurmctld.service`;# stop working slurmctld first
 my $expectT = 30;# time peroid for expect
 
 open my $ss,"< ./Nodes_IP.dat" or die "No Nodes_IP.dat to read"; 
@@ -98,7 +99,8 @@ for (@avaIP){
     my $formatted_nodeID = sprintf("%02d",$nodeID);
     my $nodename="node"."$formatted_nodeID";
     print "**Slurm setting for $nodename: scp slurm.conf\n";
-	chomp($nodename);    
+	chomp($nodename);
+	system("ssh $nodename \" systemctl stop slurmd\" ");    
 	my $exp = Expect->new;
 	$exp = Expect->spawn("scp  /usr/local/etc/slurm.conf root\@$nodename:/usr/local/etc/ \n");	
     $exp->soft_close();
@@ -111,8 +113,12 @@ print "SCP done\n";
 ### Server setting for Server
 `chown -R slurm:root /var/spool`;
 `chown -R slurm:root /var/run`;
+system("rm -f /var/log/slurmctld.log");
 `touch /var/log/slurmctld.log`;
 `chown slurm:root /var/log/slurmctld.log`;
+system("rm -f /var/log/slurm_jobacct.log");
+system("rm -f /var/log/slurm_jobcomp.log");
+
 `touch /var/log/slurm_jobacct.log /var/log/slurm_jobcomp.log`;
 `chown slurm:root /var/log/slurm_jobacct.log /var/log/slurm_jobcomp.log`;
 system("firewall-cmd --zone=internal --add-port={6817/tcp,6818/udp} --permanent");
