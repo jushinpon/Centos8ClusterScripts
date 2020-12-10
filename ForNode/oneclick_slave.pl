@@ -6,11 +6,23 @@
 use strict;
 use warnings;
 
+#### check whether there are more than one NICs in UP state.
+my $temp = `ip a|grep "state UP"`;
+my @temp = split "\n", $temp;
+my @temp1 = grep (($_!~m{^\s*$}),@temp); # remove blank lines
+my $upStateNo = @temp1;
+if ($upStateNo > 1){die "BAD: the Number \($upStateNo\) of up state NIC is more than one!!\n";}
+$temp1[0] =~ m{:\s+(.+)\s*:};
+chomp $1;
+print "NIC: $1\n";
+if ($1 == ""){die "No NIC exits\n";}
+
 my @node_array = ("00interfaces_slave.pl","01packages_slave.pl"
 			   ,"02hosts_slave.pl","03NFS_slave.pl"
 			   ,"04NIS_slave.pl");
 for (@node_array){
 	system("perl $_");
+	if($?){die "conduct $_ failed!!!\n";}
 	sleep(1);
 }
 
@@ -41,4 +53,5 @@ print  $Check "========****End of NIS test\n\n";
 print $Check "\n\n***** date check******\n";
 my $temp3 = `date`;
 print $Check "****date check: $temp3\n";
+print $Check "ALL DONE!!\n";
 close($Check);

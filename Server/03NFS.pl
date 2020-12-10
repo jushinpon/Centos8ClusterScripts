@@ -15,7 +15,7 @@ use strict;
 use warnings;
 
 #system("perl -p -i.bak -e 's/.+RPCNFSDCOUNT.+/RPCNFSDCOUNT=128/;' /etc/sysconfig/nfs");
-#system("service nfs start");
+#system("systemctl start nfs-server");
 ############### NFS share Folder ###################
 #system("mkdir /work");
 `chmod -R 755 /home`;

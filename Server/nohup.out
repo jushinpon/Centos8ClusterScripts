@@ -1,0 +1,215 @@
+Connection 'enp0s31f6' successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/3)
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/4)
+
+(process:41295): libnm-CRITICAL **: 19:12:10.210: ((libnm/nm-remote-connection.c:600)): assertion '<dropped>' failed
+Error: '/etc/sysconfig/network-scripts/ifcfg-enp1s0' is not an active connection.
+Error: no active connection provided.
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/6)
+CentOS-8 - PowerTools                           5.3 kB/s | 4.3 kB     00:00    
+Package vim-enhanced-2:8.0.1763-13.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:02 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package wget-1.19.5-8.el8_1.1.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:03 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package net-tools-2.0-0.51.20160912git.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:04 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package epel-release-8-9.el8.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:05 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package htop-2.2.0-6.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:06 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package make-1:4.2.1-10.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:08 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package openssh-8.0p1-4.el8_1.x86_64 is already installed.
+Package openssh-askpass-8.0p1-4.el8_1.x86_64 is already installed.
+Package openssh-cavs-8.0p1-4.el8_1.x86_64 is already installed.
+Package openssh-clients-8.0p1-4.el8_1.x86_64 is already installed.
+Package openssh-keycat-8.0p1-4.el8_1.x86_64 is already installed.
+Package openssh-ldap-8.0p1-4.el8_1.x86_64 is already installed.
+Package openssh-server-8.0p1-4.el8_1.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:09 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package nfs-utils-1:2.3.3-31.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:10 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package ypserv-4.0-6.20170331git5bfba76.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:11 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package yp-tools-4.2.3-1.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:13 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package geany-1.36-3.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:14 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package geany-plugins-addons-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-autoclose-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-automark-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-codenav-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-commander-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-common-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-debugger-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-defineformat-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanyctags-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanydoc-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanyextrasel-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanygendoc-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanyinsertnum-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanymacro-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanyminiscript-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanynumberedbookmarks-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanypg-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanyprj-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geanyvc-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-geniuspaste-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-git-changebar-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-keyrecord-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-latex-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-lineoperations-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-lipsum-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-markdown-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-overview-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-pairtaghighlighter-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-pohelper-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-pretty-printer-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-projectorganizer-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-scope-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-sendmail-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-shiftcolumn-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-spellcheck-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-tableconvert-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-treebrowser-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-updatechecker-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-vimode-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-workbench-1.36-4.el8.x86_64 is already installed.
+Package geany-plugins-xmlsnippets-1.36-4.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:15 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package psmisc-23.1-4.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:16 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package cockpit-211.3-1.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:17 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package firewalld-0.8.0-4.el8.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:19 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package ypbind-3:2.5-2.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:20 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package rpcbind-1.2.5-7.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:21 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package perl-Expect-1.35-10.el8.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:22 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package gcc-gfortran-8.3.1-5.el8.0.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:24 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package perl-MCE-Shared-1.862-1.el8.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:25 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package perl-Parallel-ForkManager-2.02-5.el8.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:26 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package xorg-x11-xauth-1:1.0.9-12.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:27 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package tmux-2.7-1.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:28 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package perl-CPAN-2.18-397.el8.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:30 ago on Mon 07 Dec 2020 07:12:11 PM CST.
+Package yum-utils-4.0.12-4.el8_2.noarch is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Adding repo from: https://yum.repos.intel.com/mkl/setup/intel-mkl.repo
+Intel(R) Math Kernel Library                    4.0 kB/s | 287  B     00:00    
+Package intel-mkl-2018.0-033-2018.0-033.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Loading internal null logger. Install Log::Log4perl for logging messages
+Reading '/root/.cpan/Metadata'
+  Database was generated on Mon, 07 Dec 2020 09:56:11 GMT
+CPAN: Module::CoreList loaded ok (v5.20181130)
+App::cpanminus is up to date (1.7044).
+--> Working on Env::Modify
+Fetching http://www.cpan.org/authors/id/M/MO/MOB/Env-Modify-0.02.tar.gz ... OK
+Configuring Env-Modify-0.02 ... OK
+Building and testing Env-Modify-0.02 ... OK
+Successfully reinstalled Env-Modify-0.02
+1 distribution installed
+Last metadata expiration check: 0:00:04 ago on Mon 07 Dec 2020 07:12:43 PM CST.
+Dependencies resolved.
+Nothing to do.
+Complete!
+Last metadata expiration check: 0:00:05 ago on Mon 07 Dec 2020 07:12:43 PM CST.
+Package chrony-3.5-1.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+
+***###00interfaces_master.pl: set internet card done******
+
+Please check FailedPackageInstall.dat!!!
+net.ipv4.ip_forward = 1
+net.ipv4.ip_forward = 1
+
+
+***###01rc_local.pl: set rc.local done******
+

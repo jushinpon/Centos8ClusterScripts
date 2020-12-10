@@ -5,12 +5,12 @@ machinetype = realmachine
 domainname = melcluster
 
 #For the internet interface card name, use "nmcli con" or "ip add" to show its name (if usb ifcard was used, it's better to use it for internet)
-if_internet = enp0s29u1u1
+if_internet = enp0s31f6
 #For the private interface card name
-if_private = enp3s0
+if_private = enp1s0
 
 # IP for internet (if_internet), NAT for virtualbox(10.0.2.15, default IP, may be different)
-IP_address = 140.117.59.190
+IP_address = 140.117.59.182
 
 # netmask for if_internet, also used for virtualbox  
 netmask = 255.255.255.0

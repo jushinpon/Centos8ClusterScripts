@@ -133,9 +133,10 @@ print "**********End chmod\n";
 
 ######## go through each node for the final passworless setting
 
-for (0..$#avaIP){
+for (@avaIP){
 	$pm->start and next;
-	my $temp=$_+ 1;# from node01
+	$_ =~/192.168.0.(\d{1,3})/;#192.168.0.X
+	my $temp= $1 - 1;
     my $nodeindex=sprintf("%02d",$temp);
     my $nodename= "node"."$nodeindex";
     chomp $nodename;	
@@ -159,4 +160,19 @@ for (0..$#avaIP){
 	$pm->finish;
 } # end of loop
 $pm->wait_all_children;
+
+print "***** WATCH OUT!!!!!\n";
+print "***** Begin  ssh passwordless test node by node!!!!!\n\n";
+sleep(3);
+for (@avaIP){	
+	#$pm->start and next;
+	$_ =~/192.168.0.(\d{1,3})/;#192.168.0.X
+	my $temp= $1 - 1;
+    my $nodeindex=sprintf("%02d",$temp);
+    my $nodename= "node"."$nodeindex";
+    print "**nodename**:$nodename\n";
+	system("ssh $nodename \"echo '$nodename done!'; exit\"");
+	print "\n\n*****";
+	#$pm->finish;
+}# for loop
 print "\n\n***###05root_rsa.pl: root passwordless setting done******\n\n";

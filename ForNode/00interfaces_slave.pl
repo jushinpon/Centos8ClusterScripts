@@ -32,8 +32,16 @@ for (@temp_array1){
 }
 
 #get internet card name
-`ip a`=~ m{2:\s+(e.+):\s+};# could be a problem if if not statr from "e"
-if(!$1) { die "BAD: no if card name !!\n";}
+my $temp = `ip a|grep "state UP"`;
+my @temp = split "\n", $temp;
+my @temp1 = grep (($_!~m{^\s*$}),@temp); # remove blank lines
+my $upStateNo = @temp1;
+if ($upStateNo > 1){die "The Number \($upStateNo\) of up state NIC is more than one!!\n";}
+$temp1[0] =~ m{:\s+(.+)\s*:};
+chomp $1;
+print "NIC: $1\n";
+if ($1 == ""){die "No NIC exits\n";}
+
 my $Nic_inner = $1;
 `ip a`=~ m{192.168.0.(\d{1,3})\/24};
 my $fourthdigital = $1;
